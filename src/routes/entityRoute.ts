@@ -8,12 +8,13 @@ Pode ser criada a lógica de conexão ao Banco de Dados aqui.
 */
 
 interface IEntity {
+  "id": "id",
   "attribute": "value",
   "name": "name",
   "other": "other"
 }
 
-const filePath = join(__dirname, 'entity.json')
+const filePath = join(__dirname, '../entity.json')
 const getEntities = () => {
   const data = fs.existsSync(filePath)
     ? fs.readFileSync(filePath)
@@ -38,11 +39,12 @@ const entityRoutes = (app: Application) => {
       const entities = getEntities()
       entities.push(req.body)
       saveEntity(entities)
+      res.status(201).send('OK')
     })
-    .put((req, res) => {
+    .put((req: Request, res: Response) => {
       const entities: IEntity[] = getEntities()
       saveEntity(entities.map(entity => {
-        if (entity.attribute === req.params.attribute) {
+        if (entity.id === req.params.id) {
           return {
             ...entity,
             ...req.body
@@ -52,9 +54,9 @@ const entityRoutes = (app: Application) => {
       }))
       res.status(200).send('OK')
     })
-    .delete((req, res) => {
+    .delete((req: Request, res: Response) => {
       const entities: IEntity[] = getEntities()
-      saveEntity(entities.filter(entity => entity.attribute !== req.params.attribute))
+      saveEntity(entities.filter(entity => entity.id !== req.params.id))
       res.status(200).send('OK')
     })
 }

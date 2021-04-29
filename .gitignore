@@ -1,0 +1,81 @@
+# Dependencias #
+/node_modules
+/.pnp
+.pnp.js
+
+# Testes #
+/coverage
+
+# Arquivos gerados em produção #
+/build
+/packages
+
+# misc #
+.DS_Store
+.DS_Store ?
+._ *
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+yarn-lock.error
+npm-debug.log*
+npm-error.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+# Fonte compilada #
+* .com
+* .class
+* .dll
+* .exe
+* .o
+* .so
+
+# Logs e bancos de dados #
+*.log*
+*.sql
+*.sqlite
+
+# Images #
+*.jpg
+*.png
+
+# Video #
+*.wmv
+*.mpg
+*.mpeg
+*.mp4
+*.mov
+*.flv
+*.avi
+*.ogv
+*.ogg
+*.webm
+
+# Audio #
+*.wav
+*.mp3
+*.wma
+
+# Fonts #
+*.eot
+*.ttf
+*.woff
+
+# Pacotes de compressão #
+* .7z
+* .dmg
+* .gz
+* .iso
+* .jar
+* .rar
+* .tar
+* .zip
